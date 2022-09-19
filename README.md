@@ -37,3 +37,21 @@ Aplikasi ini merupakan sebuah miniproject user management pada sistem penjualan 
 ### Reseller
 kamu bisa kunjungi `http://127.0.0.1:8000/register` untuk registrasi sebagai reseller
 
+## User Stories
+1. Super admin yg dapat mengelola seluruh akses user
+2. Supervisor Kantor pusat yg dpt mengelola akses kantor cabang
+3. Supervisor Kantor cabang yg dapat mengelola akses sales kantor cabang n reseller
+4. Sales kantor cabang melakukan input penjualan
+5. Reseller baru dari external yg perlu approval Supervisor Kantor Cabang
+
+## Fitur
+1. Manajemen User
+2. Manajemen Cabang
+3. Manajemen Penjualan
+4. Manajemen Produk
+
+## Keberlanjutan
+1. Menambahkan kategori produk
+2. Menambahkan email authentication
+3. Menambahkan statistik penjualan produk
+4. dan lain sebagainya
