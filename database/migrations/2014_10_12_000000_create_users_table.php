@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->bigInteger('branch_id');
+            $table->boolean('active');
+            $table->tinyInteger('type')->default(0);
+            /* Users: 0=>Superadmin, 1=>Supervisor, 2=>Sub_Supervisor, 3=>Sales, 4=>Reseller */
             $table->rememberToken();
             $table->timestamps();
         });
