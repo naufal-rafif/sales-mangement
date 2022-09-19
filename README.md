@@ -23,13 +23,17 @@ Aplikasi ini merupakan sebuah miniproject user management pada sistem penjualan 
 
 ## Akses Aplikasi
 ### Superadmin
-`email = admin@gmail.com` dan `password = 123456`
+- email = `admin@gmail.com`
+- password = `password = 123456`
 ### Supervisor
-`email = supervisor@gmail.com` dan `password = 123456`
+- email = `supervisor@gmail.com`
+- password = `123456`
 ### Supervisor Cabang
-`email = subsupervisor@gmail.com` dan `password = 123456`
+- email = `subsupervisor@gmail.com`
+- password = `123456`
 ### Sales
-`email = sales@gmail.com` dan `password = 123456`
+- email = `sales@gmail.com`
+- password = `123456`
 ### Reseller
 kamu bisa kunjungi `http://127.0.0.1:8000/register` untuk registrasi sebagai reseller
 
