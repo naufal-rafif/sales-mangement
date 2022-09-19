@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Branch;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -14,10 +15,11 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::latest()->paginate(5);
-
-        return view('dashboard.other.products.home', compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $products = Product::join('branches', 'products.branch_id', '=', 'branches.id')
+            ->select('products.*', 'branches.branch')
+            ->get();
+        // dd($products);
+        return view('dashboard.other.products.home', compact('products'));
     }
 
     /**
@@ -27,7 +29,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('dashboard.other.products.create');
+        $branches = Branch::where('branch', '!=', 'Indonesia')->get();
+        return view('dashboard.other.products.create', compact('branches'));
     }
 
     /**
@@ -79,7 +82,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        return view('dashboard.other.products.edit', compact('product'));
+        $branches = Branch::where('branch', '!=', 'Indonesia')->get();
+        return view('dashboard.other.products.edit', compact('product', 'branches'));
     }
 
     /**

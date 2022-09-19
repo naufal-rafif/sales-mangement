@@ -40,8 +40,13 @@
                             <td>{{ $user->type }}</td>
                             <td class="text-center">
                    
-                                    <a class="btn btn-outline-success" href="{{ route('supervisor.user.edit',$user->id) }}"><i class="bx bx-check"></i> Setujui</a>
-                   
+                                <form action="{{ route('sub_supervisor.user.update',$user->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
+                                    
+                                    <input type="hidden" value="{{ $user->active }}" name="active">
+                                    <button type="submit" class="btn btn-outline-success"><i class="bx bx-check"></i> Setujui</button>
+                                </form>
                             </td>
                         </tr>
                         @endforeach

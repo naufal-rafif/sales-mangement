@@ -56,6 +56,22 @@ class CreateUsersSeeder extends Seeder
                 'branch_id' => 2,
                 'password' => bcrypt('123456'),
             ],
+            [
+                'name' => 'Reseller 2',
+                'email' => 'reseller2@gmail.com',
+                'type' => 4,
+                'active' => 0,
+                'branch_id' => 2,
+                'password' => bcrypt('123456'),
+            ],
+            [
+                'name' => 'Reseller 3',
+                'email' => 'reseller3@gmail.com',
+                'type' => 4,
+                'active' => 0,
+                'branch_id' => 2,
+                'password' => bcrypt('123456'),
+            ],
         ];
 
         foreach ($users as $key => $user) {

@@ -29,8 +29,7 @@ class UserController extends Controller
         $users = User::join('branches', 'users.branch_id', '=', 'branches.id')
             ->select('users.*', 'branches.branch')
             ->where('active', '=', 1)
-            ->where('type', '!=', 0)
-            ->where('type', '!=', 1)
+            ->where('type', '=', 2)
             ->latest()
             ->get();
 
@@ -86,7 +85,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        dd($user);
+        // dd($user);
         return view('dashboard.supervisor.user.show', compact('user'));
     }
 
@@ -111,18 +110,18 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-        ]);
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required',
+        // ]);
 
-        $request->password == null ? $password = $request->last_password : $password = $request->password;
+        // $request->password == null ? $password = $request->last_password : $password = $request->password;
         $data = [
-            'name' => $request->name,
-            'email' => $request->email,
+            // 'name' => $request->name,
+            // 'email' => $request->email,
             'branch_id' => $request->branch_id,
-            'password' => bcrypt($password),
-            'type' => $request->role,
+            // 'password' => bcrypt($password),
+            // 'type' => $request->role,
         ];
 
         $user->update($data);

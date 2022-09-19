@@ -49,7 +49,7 @@ class BranchController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'branch' => 'required',
+            'branch' => ['required', 'unique:branches'],
         ]);
 
         $data = [

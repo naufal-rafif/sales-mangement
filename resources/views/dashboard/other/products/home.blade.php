@@ -33,13 +33,14 @@
                             <th>Cabang</th>
                             <th width="280px">Action</th>
                         </tr>
+                        <?php $i = 1 ;?>
                         @foreach ($products as $product)
                         <tr>
-                            <td>{{ ++$i }}</td>
+                            <td>{{ $i++ }}</td>
                             <td>{{ $product->name }}</td>
                             <td><img src="/image/{{ $product->image }}" width="100px"></td>
                             <td>{{ $product->price }}</td>
-                            <td>{{ $product->branch_id }}</td>
+                            <td>{{ $product->branch }}</td>
                             <td class="text-center">
                                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                    

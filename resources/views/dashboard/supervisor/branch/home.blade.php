@@ -13,7 +13,7 @@
                                 <h2>Manajemen Cabang</h2>
                             </div>
                             <div class="m-3">
-                                <a class="btn btn-outline-success" href="{{ route('superadmin.branch.create') }}">+ Add New branch</a>
+                                <a class="btn btn-outline-success" href="{{ route('supervisor.branch.create') }}">+ Add New branch</a>
                             </div>
                         </div>
                     </div>
@@ -36,11 +36,11 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $branch->branch }}</td>
                             <td class="text-center">
-                                <form action="{{ route('superadmin.branch.destroy',$branch->id) }}" method="POST">
+                                <form action="{{ route('supervisor.branch.destroy',$branch->id) }}" method="POST">
                    
-                                    <a class="btn btn-outline-info d-none" href="{{ route('superadmin.branch.show',$branch->id) }}"><i class="bx bx-show"></i></a>
+                                    <a class="btn btn-outline-info d-none" href="{{ route('supervisor.branch.show',$branch->id) }}"><i class="bx bx-show"></i></a>
                     
-                                    <a class="btn btn-outline-warning" href="{{ route('superadmin.branch.edit',$branch->id) }}"><i class="bx bx-pencil"></i></a>
+                                    <a class="btn btn-outline-warning" href="{{ route('supervisor.branch.edit',$branch->id) }}"><i class="bx bx-pencil"></i></a>
                    
                                     @csrf
                                     @method('DELETE')

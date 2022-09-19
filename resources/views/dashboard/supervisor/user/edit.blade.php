@@ -13,7 +13,7 @@
                                 <a class="btn btn-primary" href="{{ route('supervisor.user') }}"><i class="bx bx-arrow-back"></i> Back</a>
                             </div>
                             <div class="p-3 text-center">
-                                <h2>Edit User</h2>
+                                <h2>Mutasi User</h2>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <input type="hidden" value="{{ $user->password }}" name="last_password">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
-                                    <div class="form-group mb-3">
+                                    {{-- <div class="form-group mb-3">
                                         <strong>Name:</strong>
                                         <input type="text" name="name" value="{{ $user->name }}" class="form-control" placeholder="Name">
                                     </div>
@@ -52,7 +52,7 @@
                                             <option value="3" {{ $user->type == 'sales' ? 'selected' : ''}}>Sales</option>
                                             <option value="4" {{ $user->type == 'reseller' ? 'selected' : ''}}>Reseller</option>
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     @if($user->type != 'supervisor')
                                     <div class="form-group mb-3">
                                         <strong>Cabang:</strong>
@@ -63,10 +63,10 @@
                                         </select>
                                     </div>
                                     @endif
-                                    <div class="form-group mb-3">
+                                    {{-- <div class="form-group mb-3">
                                         <strong>Password:</strong>
                                         <input type="password" name="password" class="form-control" placeholder="password">
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                     <button type="submit" class="btn btn-primary">Submit</button>

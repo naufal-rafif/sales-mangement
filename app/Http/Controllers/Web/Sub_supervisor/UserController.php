@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         $users = User::join('branches', 'users.branch_id', '=', 'branches.id')
             ->select('users.*', 'branches.branch')
-            ->where('active', '=', 1)
+            ->where('active', '=', 0)
             ->where('type', '!=', 0)
             ->where('type', '!=', 1)
             ->where('type', '!=', 2)
@@ -115,11 +115,6 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        $request->validate([
-            'name' => 'required',
-            'email' => 'required',
-        ]);
-
         $data = [
             'active' => 1
         ];

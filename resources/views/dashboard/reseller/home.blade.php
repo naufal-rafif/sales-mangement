@@ -6,10 +6,10 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
                 <div class="card-body">
-                    @if(auth()->user()->is_admin == 1)
-                    <a href="{{url('superadmin/routes')}}">SuperAdmin</a>
-                    @else
+                    @if(Auth::user()->active != 0)
                     <div class=”panel-heading”>Reseller User</div>
+                    @else
+                    <div>Mohon tunggu proses aktivasi dalam 2x24 jam</div>
                     @endif
                 </div>
             </div>

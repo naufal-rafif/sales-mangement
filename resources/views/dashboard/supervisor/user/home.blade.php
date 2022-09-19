@@ -12,9 +12,9 @@
                             <div class="m-3">
                                 <h2>Manajemen User</h2>
                             </div>
-                            <div class="m-3">
+                            {{-- <div class="m-3">
                                 <a class="btn btn-outline-success" href="{{ route('supervisor.user.create') }}">+ Add New User</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                    
@@ -44,14 +44,14 @@
                             <td class="text-center">
                                 <form action="{{ route('supervisor.user.destroy',$user->id) }}" method="POST">
                    
-                                    <a class="btn btn-outline-info d-none" href="{{ route('supervisor.user.show',$user->id) }}"><i class="bx bx-show"></i></a>
+                                    {{-- <a class="btn btn-outline-info d-none" href="{{ route('supervisor.user.show',$user->id) }}"><i class="bx bx-show"></i></a> --}}
                     
                                     <a class="btn btn-outline-warning" href="{{ route('supervisor.user.edit',$user->id) }}"><i class="bx bx-pencil"></i></a>
                    
                                     @csrf
                                     @method('DELETE')
                       
-                                    <button type="submit" class="btn btn-outline-danger"><i class="bx bx-trash"></i></button>
+                                    {{-- <button type="submit" class="btn btn-outline-danger"><i class="bx bx-trash"></i></button> --}}
                                 </form>
                             </td>
                         </tr>

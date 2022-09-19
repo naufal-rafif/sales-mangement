@@ -45,9 +45,11 @@
                                     <a class="nav-link {{request()->segment(2) == 'branch' ? 'active fw-semibold' : ''}}" href="{{route($id = Auth::user()->type.'.branch')}}">Manajemen Cabang</a>
                                 </li>
                             @endif
-                            <li class="nav-item">
-                                <a class="nav-link {{request()->segment(2) == 'sales' ? 'active fw-semibold' : ''}}" href="{{route($id = Auth::user()->type.'.sales')}}">Manajemen Penjualan</a>
-                            </li>
+                            @if(Auth::user()->active != 0)
+                                <li class="nav-item">
+                                    <a class="nav-link {{request()->segment(2) == 'sales' ? 'active fw-semibold' : ''}}" href="{{route($id = Auth::user()->type.'.sales')}}">Manajemen Penjualan</a>
+                                </li>
+                            @endif
                         @endguest
                     </ul>
 

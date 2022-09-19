@@ -43,6 +43,18 @@
                                         <strong>Harga:</strong>
                                         <input type="text" name="price" class="mt-1 form-control" placeholder="price">
                                     </div>
+                                    @if(Auth::user()->type !='sub_supervisor')
+                                        <div class="form-group mb-3">
+                                            <strong>Cabang:</strong>
+                                            <select class="form-select mb-3" name="branch_id" aria-label="Default select example">
+                                                @foreach($branches as $branch)
+                                                    <option value="{{$branch->id}}">{{$branch->branch}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    @else
+                                        <input type="hidden" name="branch_id" value="{{Auth::user()->branch_id}}">
+                                    @endif
                                     <div class="form-group mb-3">
                                         <strong>Image:</strong>
                                         <input type="file" name="image" class="form-control" placeholder="image">

@@ -46,7 +46,14 @@
                                         <strong>Harga:</strong>
                                         <input type="text" name="price" value="{{ $product->price }}" class="form-control" placeholder="Harga">
                                     </div>
-                                    
+                                    <div class="form-group mb-3">
+                                        <strong>Cabang:</strong>
+                                        <select class="form-select mb-3" name="branch_id" aria-label="Default select example">
+                                            @foreach($branches as $branch)
+                                                <option value="{{$branch->id}}" {{ $product->branch_id == $branch->id ? 'selected' : ''}}>{{$branch->branch}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
                                     <div class="form-group mb-3">
                                         <strong>Image:</strong>
                                         <input type="file" name="image" class="form-control" placeholder="image">

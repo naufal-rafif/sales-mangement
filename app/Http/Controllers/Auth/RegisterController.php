@@ -67,7 +67,11 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'branch_id' => $data['branch_id'],
+            'active' => 0,
+            'type' => 4,
             'password' => Hash::make($data['password']),
         ]);
+        return redirect()->route('reseller.home');
     }
 }

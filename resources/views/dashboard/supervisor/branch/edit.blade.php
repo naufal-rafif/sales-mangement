@@ -10,7 +10,7 @@
                     <div class="row mb-5">
                         <div class="col-lg-12 position-relative">
                             <div class="p-3 position-absolute">
-                                <a class="btn btn-primary" href="{{ route('superadmin.branch') }}"><i class="bx bx-arrow-back"></i> Back</a>
+                                <a class="btn btn-primary" href="{{ route('supervisor.branch') }}"><i class="bx bx-arrow-back"></i> Back</a>
                             </div>
                             <div class="p-3 text-center">
                                 <h2>Edit Cabang</h2>
@@ -31,7 +31,7 @@
                         @endif
                         
                         
-                        <form action="{{ route('superadmin.branch.update',$branch->id) }}" method="POST">
+                        <form action="{{ route('supervisor.branch.update',$branch->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="row">
