@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('description');
             $table->integer('branch_id');
+            $table->integer('user_id');
             $table->integer('product_id');
             $table->integer('qty');
             $table->string('image');
