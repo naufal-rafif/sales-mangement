@@ -19,7 +19,8 @@ Aplikasi ini merupakan sebuah miniproject user management pada sistem penjualan 
 9. Buka terminal pada visual studio code dan ketikkan perintah `php artisan migrate:fresh --seed` (perintah ini digunakan untuk generate tabel dan isi tabel pada database)
 10. Ketikkan perintah `php artisan key:generate` untuk menambahkan kunci pada file `.env`
 11. Jalankan aplikasi dengan 2 terminal yang berbeda dan ketikkan `php artisan serve` dan `npm run dev`
-12. Aplikasi sudah siap digunakan
+12. Jangan lupa untuk menjalankan XAMPP
+13. Aplikasi sudah siap digunakan
 
 ## Akses Aplikasi
 ### Superadmin
