@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             CreateUsersSeeder::class,
             BranchSeeder::class,
             ProductsSeeder::class,
+            SalesSeeder::class,
         ]);
     }
 }

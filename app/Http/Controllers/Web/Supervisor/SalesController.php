@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Web\Supervisor;
 
-use App\Http\Controllers\Controller;
+use App\Models\Sales;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class SalesController extends Controller
 {
@@ -24,6 +25,12 @@ class SalesController extends Controller
      */
     public function index()
     {
-        return view('dashboard.supervisor.sales.home');
+        $sales = Sales::join('products', 'sales.product_id', '=', 'products.id')
+            ->join('branches', 'sales.branch_id', '=', 'branches.id')
+            ->join('users', 'users.id', '=', 'sales.user_id')
+            ->select('sales.*', 'products.name', 'branches.branch', 'users.email')
+            ->get();
+        // dd($sales);
+        return view('dashboard.supervisor.sales.home', compact('sales'));
     }
 }

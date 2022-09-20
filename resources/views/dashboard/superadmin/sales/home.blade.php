@@ -5,10 +5,57 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header fw-semibold fs-5">Manajemen Penjualan</div>
   
                 <div class="card-body">
-                    Selamat Datang, <b>{{Auth::user()->name}}</b>
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="m-3">
+                                <h2>Manajemen Penjualan</h2>
+                            </div>
+                            {{-- <div class="m-3">
+                                <a class="btn btn-outline-success" href="{{ route('superadmin.sales.create') }}">+ Add New Penjualan</a>
+                            </div> --}}
+                        </div>
+                    </div>
+                   
+                    @if ($message = Session::get('success'))
+                        <div class="alert alert-success">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
+                   
+                    <table class="table table-bordered">
+                        <tr class="text-center">
+                            <th>No</th>
+                            <th>Bukti Gambar</th>
+                            <th>Deskripsi</th>
+                            <th>Produk</th>
+                            <th>Jumlah</th>
+                            <th>Status</th>
+                        </tr>
+                        <?php $no = 1 ;?>
+                        @foreach ($sales as $sale)
+                        <tr class="text-center">
+                            <td>{{ $no++ }}</td>
+                            <td><img src="/image/{{ $sale->image }}" width="100px"></td>
+                            <td>{{ $sale->description }}</td>
+                            <td>{{ $sale->name }}</td>
+                            <td>{{ $sale->qty }}</td>
+                            <td>
+                                <form action="{{ route('superadmin.sales.destroy',$sale->id) }}" method="POST">
+                    
+                                    <a class="btn btn-outline-warning" href="{{ route('superadmin.sales.edit',$sale->id) }}"><i class="bx bx-pencil"></i></a>
+                   
+                                    @csrf
+                                    @method('DELETE')
+                      
+                                    <button type="submit" class="btn btn-outline-danger"><i class="bx bx-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </table>
+                  
                 </div>
             </div>
         </div>

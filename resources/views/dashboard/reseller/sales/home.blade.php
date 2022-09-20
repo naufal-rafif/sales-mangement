@@ -5,10 +5,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header fw-semibold fs-5">Manajemen Penjualan</div>
   
-                <div class="card-body">
-                    Selamat Datang, <b>{{Auth::user()->name}}</b>
+                <div class="card-body text-center">
+                    <h1>COMING SOON</h1>
                 </div>
             </div>
         </div>
